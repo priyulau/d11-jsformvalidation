@@ -2,24 +2,59 @@
 <html>
     <head>
         <script>
-            var password = document.getElementById("fname").value;
-            var lowercase = document.getElementById("lowercase");
-            var uppercase = document.getElementById("uppercase");
-            var length = document.getElementById("length");
-            var number = document.getElementById("number");
+            function test() {
+            var x = document.getElementById('password').value;
+            var y = document.getElementById('confirmpw').value;
 
-            password.onkeyup = function() {
-            //Validate for lowercase letters
-                var lowercasev = /[a-z]/g;
-                if (password.value.match(lowercasev)) {
-                    lowercase.classList.remove("invalid");
-                    lowercase.classList.add("valid");
+            //Validating for lowercase letter
+                var lowercaselib = /[a-z]/g;
+                if (x.match(lowercaselib)) {
+                    document.getElementById('lowercase').classList.add("valid");
+                    document.getElementById('lowercase').classList.remove("invalid")
+                } else {
+                    document.getElementById('lowercase').classList.add("invalid");
+                    document.getElementById('lowercase').classList.remove("valid")
                 }
-                else {
-                    document.getElementById("lowercase").classList.add("invalid");
-                    document.getElementById("lowercase").classList.remove("valid");
+            
+            //Validating for uppercase letter
+                var uppercaselib = /[A-Z]/g;
+                if (x.match(uppercaselib)) {
+                    document.getElementById('uppercase').classList.add("valid");
+                    document.getElementById('uppercase').classList.remove("invalid")
+                } else {
+                    document.getElementById('uppercase').classList.add("invalid");
+                    document.getElementById('uppercase').classList.remove("valid")
                 }
+
+            //Validating for length
+                if (x.length >= 8) {
+                    document.getElementById('length').classList.add("valid");
+                    document.getElementById('length').classList.remove("invalid")
+                } else {
+                    document.getElementById('length').classList.add("invalid");
+                    document.getElementById('length').classList.remove("valid")
+                }
+
+            //Validating for number
+                var numberlib = /[0-9]/g;
+                if (x.match(numberlib)) {
+                    document.getElementById('number').classList.add("valid");
+                    document.getElementById('number').classList.remove("invalid")
+                } else {
+                    document.getElementById('number').classList.add("invalid");
+                    document.getElementById('number').classList.remove("valid")
+                }
+
+            //Validating for confirm password
+                if (x == y) {
+                    document.getElementById('confirm').classList.add("valid");
+                    document.getElementById('confirm').classList.remove("invalid")
+                } else {
+                    document.getElementById('confirm').classList.add("invalid");
+                    document.getElementById('confirm').classList.remove("valid")
+                }                 
             }
+
         </script>
         <style>
             .valid{
@@ -33,7 +68,7 @@
     </head>
     <header>Create an Account</header><br>
     <body>
-        <form>
+        
             <label for="fname">First Name</label>
             <input type="textbox" id="fname" name="fname"><br>
             <label for="lname">Last Name</label>
@@ -42,9 +77,9 @@
             <input type="textbox" id="uname" name="uname"><br>
             <label for="email">Email Address</label>
             <input type="email" id="email" name="email"><br>
-            <label for="password">Password</label>
 
             <!--Password Section-->
+            <label for="password">Password</label>
             <input type="password" id="password" name="password"><br>
             <label for="confirmpw">Confirm Password</label>
             <input type="password" id="confirmpw" name="confirmpw"><br><br>
@@ -65,9 +100,7 @@
             <input type="checkbox">I confirm I have read the Terms of Use Agreement and consent to the
             Privacy Policy.<br><br>
 
-            <button type="submit" onclick="">Submit</button>
-        </form>
-
+            <button onclick="test()">Submit</button>
         
     </body>
 </html>

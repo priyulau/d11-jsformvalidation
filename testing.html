@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function win() {
+                var x = document.getElementById('letter');
+                var y = /[a-z]/g;
+                if (x.value.match(y)) {
+                 document.getElementById('id1').innerHTML = "YES";
+                } else {
+                document.getElementById('id1').innerHTML = "No...";
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <form>
+            <label for="guess">Lowercase Only</label><br>
+            <input type="text" id="letter" name="letter"><br>
+        </form>
+
+        <button type="submit" onclick="win()">Submit</button>
+    
+        <p id="id1">Did I get it?</p>
+    </body>
+</html>
