@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            var password = document.getElementById("fname").value;
+            var lowercase = document.getElementById("lowercase");
+            var uppercase = document.getElementById("uppercase");
+            var length = document.getElementById("length");
+            var number = document.getElementById("number");
+
+            password.onkeyup = function() {
+            //Validate for lowercase letters
+                var lowercasev = /[a-z]/g;
+                if (password.value.match(lowercasev)) {
+                    lowercase.classList.remove("invalid");
+                    lowercase.classList.add("valid");
+                }
+                else {
+                    document.getElementById("lowercase").classList.add("invalid");
+                    document.getElementById("lowercase").classList.remove("valid");
+                }
+            }
+        </script>
+        <style>
+            .valid{
+                color:green;
+            }
+            .invalid{
+                color:red;
+            }
+        </style>
+        <title>Welcome to MySpace</title>
+    </head>
+    <header>Create an Account</header><br>
+    <body>
+        <form>
+            <label for="fname">First Name</label>
+            <input type="textbox" id="fname" name="fname"><br>
+            <label for="lname">Last Name</label>
+            <input type="textbox" id="lname" name="lname"><br>
+            <label for="uname">User Name</label>
+            <input type="textbox" id="uname" name="uname"><br>
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email"><br>
+            <label for="password">Password</label>
+
+            <!--Password Section-->
+            <input type="password" id="password" name="password"><br>
+            <label for="confirmpw">Confirm Password</label>
+            <input type="password" id="confirmpw" name="confirmpw"><br><br>
+
+            Password must:<ul>
+                <li id="lowercase">Contain at least one lowercase letter</li>
+                <li id="uppercase">Contain at least one uppercase letter</li>
+                <li id="length">Be 8+ characters in length</li>
+                <li id="number">Contain at least one number</li>
+                <li id="confirm">Match the "Confirm Password"</li>
+            </ul><br>
+    
+            <!--Date of Birth Section-->
+            <label for="dob">Date of Birth</label>
+            <input type="date" id="dob" name="dob"><br><br>
+
+            
+            <input type="checkbox">I confirm I have read the Terms of Use Agreement and consent to the
+            Privacy Policy.<br><br>
+
+            <button type="submit" onclick="">Submit</button>
+        </form>
+
+        
+    </body>
+</html>
