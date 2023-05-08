@@ -11,7 +11,7 @@ Deliverable 11 assignment.
 The deliverable is complete and in its final stage.
 
 ##Code Style
-This project incorporates HTML, CSS, Tailwind, and some Javasceipt. It 
+This project incorporates sTML, CSS, Tailwind, and some Javasceipt. It 
 primarily utilizes Javascript HTML DOM features.
 
 ##How to Use

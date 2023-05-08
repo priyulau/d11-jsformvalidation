@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
         <script>
             //Creating function that will validate password when "Submit" is clicked
             //Defined variables to save space/time to not have to type out the entire 
@@ -58,7 +60,13 @@
             }
 
         </script>
+        
         <style>
+            *{
+                font-weight: 100;
+                font-size: small;
+                font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            }
             /*Created classes to color code password characteristics based on validity*/
             .valid{
                 color:green;
@@ -66,25 +74,69 @@
             .invalid{
                 color:red;
             }
+            
+            .splitleft{
+                height:100%;
+                width:50%;
+                position:fixed;
+                top:0;
+                left:0;
+            }
+            
+            .splitright{
+                height:100%;
+                width:50%;
+                position:fixed;
+                top:0;
+                right:0;
+                background-color: gainsboro;
+            }
+
+            /*To center vertically and horizontally*/
+            .centered{
+                text-align: left;
+                margin: 0px;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+
+            .image{
+                object-fit: contain;
+                height:100%;
+            }
+
+            @media screen and (max-width: 600px) {
+                .splitright {
+                    width: 100%;
+                }
+            }
         </style>
-        <title>Welcome to MySpace</title>
+
+        <title>Account Sign Up</title>
     </head>
-    <header>Create an Account</header><br>
+
     <body>
+        <div class="mx-auto splitleft">
+            <img src="bostongardens.jpg" class="image" id="bostongardens"></div>
+
+        <div class="splitright">
+            <div class="centered">
             <!--General form information Section-->
-            <label for="fname">First Name</label>
+            <label for="fname">First Name</label><br>
             <input type="textbox" id="fname" name="fname"><br>
-            <label for="lname">Last Name</label>
+            <label for="lname">Last Name</label><br>
             <input type="textbox" id="lname" name="lname"><br>
-            <label for="uname">User Name</label>
+            <label for="uname">User Name</label><br>
             <input type="textbox" id="uname" name="uname"><br>
-            <label for="email">Email Address</label>
+            <label for="email">Email Address</label><br>
             <input type="email" id="email" name="email"><br>
 
             <!--Password Section-->
-            <label for="password">Password</label>
+            <label for="password">Password</label><br>
             <input type="password" id="password" name="password"><br>
-            <label for="confirmpw">Confirm Password</label>
+            <label for="confirmpw">Confirm Password</label><br>
             <input type="password" id="confirmpw" name="confirmpw"><br><br>
 
             <!--Password Characteristics Text-->
@@ -97,7 +149,7 @@
             </ul><br>
     
             <!--Date of Birth Section-->
-            <label for="dob">Date of Birth</label>
+            <label for="dob">Date of Birth</label><br>
             <input type="date" id="dob" name="dob"><br><br>
 
             
@@ -105,6 +157,7 @@
             Privacy Policy.<br><br>
 
             <button onclick="test()">Submit</button>
-        
+            </div>
+        </div>
     </body>
 </html>
