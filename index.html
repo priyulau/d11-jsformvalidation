@@ -2,6 +2,8 @@
 <html>
     <head>
         <script>
+            //Creating function that will validate password when "Submit" is clicked
+            //Defined variables to save space/time to not have to type out the entire 
             function test() {
             var x = document.getElementById('password').value;
             var y = document.getElementById('confirmpw').value;
@@ -57,6 +59,7 @@
 
         </script>
         <style>
+            /*Created classes to color code password characteristics based on validity*/
             .valid{
                 color:green;
             }
@@ -68,7 +71,7 @@
     </head>
     <header>Create an Account</header><br>
     <body>
-        
+            <!--General form information Section-->
             <label for="fname">First Name</label>
             <input type="textbox" id="fname" name="fname"><br>
             <label for="lname">Last Name</label>
@@ -84,6 +87,7 @@
             <label for="confirmpw">Confirm Password</label>
             <input type="password" id="confirmpw" name="confirmpw"><br><br>
 
+            <!--Password Characteristics Text-->
             Password must:<ul>
                 <li id="lowercase">Contain at least one lowercase letter</li>
                 <li id="uppercase">Contain at least one uppercase letter</li>
